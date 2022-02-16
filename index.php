@@ -1,3 +1,8 @@
+<?php
+    require_once __DIR__ .'/classes/Card.php';
+    require_once __DIR__ .'/classes/User.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +12,12 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <?php
+        $user = new User(0, "mark", "beloso", 19, 0, 1);
+        var_dump($user) ;
+
+        $card = new Card("4000056655665556", "isa","2023-12-01", "213","mark beloso");
+        var_dump($card);
+    ?>
 </body>
 </html>
