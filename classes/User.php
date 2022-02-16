@@ -1,12 +1,11 @@
 <?php
 
-class User{
-        protected $id;
+class User {
+        protected $id_user;
         protected $name;
         protected $surname;
         protected $age;
-        protected $vip;
-        protected $order;
+        protected $order = [];
 
         private function checkAge($int) 
         {
@@ -17,8 +16,8 @@ class User{
             return $this->age = $int;;
         }
 
-        public function __construct($id, $name, $surname, $age, $vip, $order){
-            $this->id = $id;
+        public function __construct($id_user, $name, $surname, $age){
+            $this->id_user = $id_user;
             $this->name = $name;
             $this->surname = $surname;
             try 
@@ -29,8 +28,6 @@ class User{
             {
                 echo  $e->getMessage();
             }
-            $this->vip = $vip;
-            $this->order = $order;
         }
 
         
@@ -38,21 +35,21 @@ class User{
         
 
         /**
-         * Get the value of id
+         * Get the value of id_user
          */ 
-        public function getId()
+        public function getID_user()
         {
-                return $this->id;
+                return $this->id_user;
         }
 
         /**
-         * Set the value of id
+         * Set the value of id_user
          *
          * @return  self
          */ 
-        public function setId($id)
+        public function setID_user($id_user)
         {
-                $this->id = $id;
+                $this->id_user = $id_user;
 
                 return $this;
         }
@@ -119,26 +116,7 @@ class User{
                 return $this;
         }
 
-        /**
-         * Get the value of vip
-         */ 
-        public function getVip()
-        {
-                return $this->vip;
-        }
-
-        /**
-         * Set the value of vip
-         *
-         * @return  self
-         */ 
-        public function setVip($vip)
-        {
-                $this->vip = $vip;
-
-                return $this;
-        }
-
+        
         /**
          * Get the value of order
          */ 
@@ -154,7 +132,7 @@ class User{
          */ 
         public function setOrder($order)
         {
-                $this->order = $order;
+                $this->order[] = $order;
 
                 return $this;
         }

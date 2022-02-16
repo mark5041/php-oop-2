@@ -1,12 +1,12 @@
 <?php
 
-class Card{
+class Card {
         protected $number;
         protected $name;
         protected $expire;
         protected $cvv;
         protected $holder;
-        protected $availableCard = [
+        private $availableCard = [
             'Mastercard',
             'Visa',
             'American Express',
@@ -34,11 +34,7 @@ class Card{
             $this->expire = $expire;
             $this->cvv = $cvv;
             $this->holder = $holder;
-        }
-
-
-         
-        
+        } 
 
         
 
